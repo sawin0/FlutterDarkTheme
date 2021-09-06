@@ -25,10 +25,14 @@ class _MyAppState extends State<MyApp> {
   );
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     _isDark = brightness == Brightness.dark;
+    super.initState();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       darkTheme: _dark,
       theme: _light,
